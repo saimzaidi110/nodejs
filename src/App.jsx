@@ -6,6 +6,8 @@ import LoginPage from './pages/LoginPage'
 import PremiumPage from './pages/PremiumPage'
 import BlogPage from './pages/BlogPage'
 import ContactusPage from './pages/ContactusPage'
+import MainDashboard from './pages/maindashboard'
+
 
 function App() {
  const router = createBrowserRouter([
@@ -23,6 +25,9 @@ function App() {
   },
   { path:'/blog',
     element:<BlogPage/>
+  },
+   { path:'/dashboard',
+    element:<MainDashboard/>
   },
  ])
 
