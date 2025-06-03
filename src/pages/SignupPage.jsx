@@ -1,3 +1,11 @@
+import React from 'react'
+
+export default function SignupPage() {
+  return (
+    <div>
+        
+
+
 <section class="bg-white">
     <div class="grid grid-cols-1 lg:grid-cols-2">
         <div class="relative flex items-end px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 bg-gray-50 sm:px-6 lg:px-8">
@@ -163,3 +171,7 @@
         </div>
     </div>
 </section>
+
+    </div>
+  )
+}
