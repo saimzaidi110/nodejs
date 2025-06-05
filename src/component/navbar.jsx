@@ -2,8 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+
   const navigate = useNavigate()
   const HandleLogout = () =>{
+    localStorage.removeItem("user")
     navigate('/login')
   }
   return (
