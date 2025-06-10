@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { Link, useNavigate, } from 'react-router-dom'
+//import { Link, useNavigate, } from 'react-router-dom'
 
 export default function SignupPage() {
 
@@ -24,8 +24,8 @@ export default function SignupPage() {
         localStorage.setItem('users', JSON.stringify([...users, user]))
 
         nameRef.current.value = ""
-        nameRef.current.value = ""
-        nameRef.current.value = ""
+        emailRef.current.value = ""
+        passwordRef.current.value = ""
 
     }
     return (

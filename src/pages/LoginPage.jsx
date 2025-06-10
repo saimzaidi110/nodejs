@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { UserContext } from '../context/UserContext'
 
 export default function LoginPage() {
-
+    const {userlogin} = useContext(UserContext)
     const [users, setUsers] = useState(JSON.parse(localStorage.getItem('users')) || [])
     const navigate = useNavigate()
     const emailRef = useRef()
@@ -20,7 +21,7 @@ export default function LoginPage() {
         console.log(finduser)
         if (finduser){
             if(finduser.password == password){
-                localStorage.setItem('user', JSON.stringify(user))
+                userlogin(finduser)
                 toast.success("Login SuccessFully")
                   navigate('/dashboard')
             }

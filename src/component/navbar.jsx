@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 const Navbar = () => {
 
   const navigate = useNavigate()
+  const {userlogout}= useContext(UserContext)
   const HandleLogout = () =>{
-    localStorage.removeItem("user")
+    userlogout()
     navigate('/login')
   }
   return (

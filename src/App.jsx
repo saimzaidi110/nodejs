@@ -13,53 +13,61 @@ import HelpPAge from './pages/HelpPAge'
 import Dashboard from "./pages/dashboard";
 import SignupPage from "./pages/SignupPage"
 function App() {
- const router = createBrowserRouter([
-  { path:'/',
-    element:<HomePage/>
-  },
-  { path:'/contact',
-    element:<ContactusPage/>
-  },
-  { path:'/login',
-    element:<LoginPage/>
-  },
-   { path:'/signup',
-    element:<SignupPage/>
-  },
-  { path:'/premium',
-    element:<PremiumPage/>
-  },
-  { path:'/blog',
-    element:<BlogPage/>
-  },
-   { path:'/dashboard',
-    element:<MainDashboard/>,
-    children:[
-      {
-         path:'/dashboard',
-         element:<Dashboard/>
-      },
-      {
-        path:'profile',
-        element:<ProfilePage/>
-      },
-       {
-        path:'setting',
-        element:<SettingPage/>
-      },
-       {
-        path:'help',
-        element:<HelpPAge/>
-      },
-    ]
-  },
- ])
+  const {user}= UseContext(UserContext)
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <HomePage />
+    },
+    {
+      path: '/contact',
+      element: <ContactusPage />
+    },
+    {
+      path: '/login',
+      element: <LoginPage />
+    },
+    {
+      path: '/signup',
+      element: <SignupPage />
+    },
+    {
+      path: '/premium',
+      element: <PremiumPage />
+    },
+    {
+      path: '/blog',
+      element: <BlogPage />
+    },
+    {
+      path: '/dashboard',
+      element: <MainDashboard />,
+      children: [
+        {
+          path: '/dashboard',
+          element: <Dashboard />
+        },
+        {
+          path: 'profile',
+          element: <ProfilePage />
+        },
+        {
+          path: 'setting',
+          element: <SettingPage />
+        },
+        {
+          path: 'help',
+          element: <HelpPAge />
+        },
+      ]
+    },
+  ])
 
   return (
     <>
-   <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </>
-    
+
   )
 }
 
